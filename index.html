@@ -52,8 +52,25 @@
       <h1>Coming soon<span class="dot"></span></h1>
     </main>                                                                                                                                                                                                                                                                                                                  
    
-    <script type='text/javascript'>                                                                                                                                                                                                                                                                                          
-      // your script
-    </script>                                                                                                                                                                                                                                                                       
+    <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00D9K00000Y0t91',
+				'Pascal_AI',
+				'https://fleetcor-eu--part.sandbox.my.site.com/ESWPascal1779361513624',
+				{
+					scrt2URL: 'https://fleetcor-eu--part.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://fleetcor-eu--part.sandbox.my.site.com/ESWPascal1779361513624/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+                                                                                                                                                                                                                                                                     
   </body>
   </html>
