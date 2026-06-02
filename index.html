@@ -54,6 +54,13 @@
     </main>                                                                                                                                                                                                                                                                                                                  
    
     <script type='text/javascript'>
+		window.addEventListener("onEmbeddedMessagingReady", () => {
+		    console.log("Messaging Ready!!!");
+		
+		    // window.dataLayer.push({
+		    //     event: "agentforce_ready"
+		    // });
+		});
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
