@@ -61,26 +61,32 @@
 		    //     event: "agentforce_ready"
 		    // });
 		});
+		window.addEventListener("onEmbeddedMessagingButtonClicked", (event) => {
+		  console.log("onEmbeddedMessagingButtonClicked detail: ", event.detail);
+		
+		  // Do something...
+		});
+		window.addEventListener("onEmbeddedMessagingConversationClosed", (event) => {
+		  console.log("onEmbeddedMessagingConversationClosed detail: ", event.detail);
+		
+		  // Do something...
+		});
 		window.addEventListener("onEmbeddedMessagingConversationStarted", (event) => {
-		  console.log("Received the onEmbeddedMessagingConversationStarted event…");
 		  console.log("onEmbeddedMessagingConversationStarted detail: ", event.detail);
 		
 		  // Do something...
 		});
 		window.addEventListener("onEmbeddedMessagingConversationOpened", (event) => {
-		  console.log("Received the onEmbeddedMessagingConversationOpened event…");
 		  console.log("onEmbeddedMessagingConversationOpened detail: ", event.detail);
 		
 		  // Do something...
 		});
 		window.addEventListener("onEmbeddedMessagingWindowClosed", (event) => {
-		  console.log("Received the onEmbeddedMessagingWindowClosed event…");
 		  console.log("onEmbeddedMessagingWindowClosed detail: ", event.detail);
 		
 		  // Do something...
 		});
 		window.addEventListener("onEmbeddedMessageSent", (event) => {
-		  console.log("Received the onEmbeddedMessageSent event…");
 		  console.log("onEmbeddedMessageSent detail: ", event.detail);
 		
 		  // Do something...
