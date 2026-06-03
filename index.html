@@ -69,6 +69,11 @@
 					console.log('message_submitted');
 					// dataLayer.push({ event: "message_submitted", "conversation_ID": event.detail.conversationId });
 				} else {
+					if (event.detail.conversationEntry.entryPayload.includes('submitted your request, and a representative will follow up with you soon')) {
+						console.log('chat_bot_net_lead_created');
+						// dataLayer.push({ event: "chat_bot_net_lead_created", "conversation_ID": event.detail.conversationId });
+					}
+						
 					console.log('message_response');
 					// dataLayer.push({ event: "message_response", "conversation_ID": event.detail.conversationId });
 				}
