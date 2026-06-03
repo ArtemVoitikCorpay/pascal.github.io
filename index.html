@@ -64,7 +64,6 @@
 			// dataLayer.push({ event: "chat_started", "conversation_ID": event.detail.conversationId });
 		});
 		window.addEventListener("onEmbeddedMessageSent", (event) => {
-	  		console.log("onEmbeddedMessageSent detail: ", event.detail);
 			if (event.detail.conversationEntry.entryType == 'Message') {
 				if (event.detail.conversationEntry.senderDisplayName == 'Guest') {
 					console.log('message_submitted');
@@ -73,6 +72,7 @@
 					console.log('message_response');
 					// dataLayer.push({ event: "message_response", "conversation_ID": event.detail.conversationId });
 				}
+				console.log("onEmbeddedMessageSent detail: ", event.detail);
 			}
 		});
 	function initEmbeddedMessaging() {
