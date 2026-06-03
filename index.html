@@ -54,13 +54,6 @@
     </main>                                                                                                                                                                                                                                                                                                                  
    
     <script type='text/javascript'>
-		window.addEventListener("onEmbeddedMessagingReady", () => {
-		    console.log("Messaging Ready!!!");
-		
-		    // window.dataLayer.push({
-		    //     event: "agentforce_ready"
-		    // });
-		});
 		window.addEventListener("onEmbeddedMessagingButtonClicked", (event) => {
 		  console.log("onEmbeddedMessagingButtonClicked detail: ", event.detail);
 		
@@ -69,27 +62,42 @@
 		window.addEventListener("onEmbeddedMessagingConversationClosed", (event) => {
 		  console.log("onEmbeddedMessagingConversationClosed detail: ", event.detail);
 		
-		  // Do something...
+		  // When a customer click End Chat button
 		});
 		window.addEventListener("onEmbeddedMessagingConversationStarted", (event) => {
 		  console.log("onEmbeddedMessagingConversationStarted detail: ", event.detail);
 		
-		  // Do something...
+		  // When a customer click new conversation button
 		});
 		window.addEventListener("onEmbeddedMessagingConversationOpened", (event) => {
 		  console.log("onEmbeddedMessagingConversationOpened detail: ", event.detail);
 		
-		  // Do something...
+		  // When the chat loaded
 		});
 		window.addEventListener("onEmbeddedMessagingWindowClosed", (event) => {
 		  console.log("onEmbeddedMessagingWindowClosed detail: ", event.detail);
 		
 		  // Do something...
 		});
+		window.addEventListener("onEmbeddedMessagingWindowMinimized", (event) => {
+		  console.log("onEmbeddedMessagingWindowMinimized detail: ", event.detail);
+		
+		  // Do something...
+		});
+		window.addEventListener("onEmbeddedMessagingWindowMaximized", (event) => {
+		  console.log("onEmbeddedMessagingWindowMaximized detail: ", event.detail);
+		
+		  // Do something...
+		});
+		window.addEventListener("onEmbeddedMessageLinkClicked", (event) => {
+		  console.log("onEmbeddedMessageLinkClicked detail: ", event.detail);
+		
+		  // Do something...
+		});
 		window.addEventListener("onEmbeddedMessageSent", (event) => {
 		  console.log("onEmbeddedMessageSent detail: ", event.detail);
 		
-		  // Do something...
+		  // When a message send (doen't matter customer or bot)
 		});
 	function initEmbeddedMessaging() {
 		try {
