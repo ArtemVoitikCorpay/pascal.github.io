@@ -80,63 +80,6 @@
 				console.log("onEmbeddedMessageSent detail: ", event.detail);
 			}
 		});
-
-		// feedback custom buttons
-		window.addEventListener("onEmbeddedMessagingReady", () => {
-		    console.log("Messaging Ready");
-		
-		    observeMessages();
-		});
-		function observeMessages() {
-		    const chatContainer = document.querySelector("embedded-messaging");
-		
-		    const observer = new MutationObserver((mutations) => {
-		        mutations.forEach((mutation) => {
-		            mutation.addedNodes.forEach((node) => {
-		                if (node.nodeType === 1 && node.classList.contains("agentMessage")) {
-		                    addFeedbackButtons(node);
-		                }
-		            });
-		        });
-		    });
-		
-		    observer.observe(chatContainer.shadowRoot, {
-		        childList: true,
-		        subtree: true
-		    });
-		}
-		function addFeedbackButtons(messageElement) {
-		    // Avoid duplicates
-		    if (messageElement.querySelector(".feedback-buttons")) return;
-		
-		    const container = document.createElement("div");
-		    container.className = "feedback-buttons";
-		    container.style.marginTop = "6px";
-		
-		    const up = document.createElement("button");
-		    up.textContent = "👍";
-		    up.onclick = () => sendFeedback("up", messageElement);
-		
-		    const down = document.createElement("button");
-		    down.textContent = "👎";
-		    down.style.marginLeft = "8px";
-		    down.onclick = () => sendFeedback("down", messageElement);
-		
-		    container.appendChild(up);
-		    container.appendChild(down);
-		
-		    messageElement.appendChild(container);
-		}
-
-		function sendFeedback(type, messageElement) {
-		    const messageText = messageElement.innerText;
-		
-		    console.log("Feedback:", type, messageText);
-		
-		    // Example: send to Salesforce
-		    // dataLayer.push({ event: "happy_chat", "conversation_ID": event.detail.conversationId });
-			// dataLayer.push({ event: "unhappy_chat", "conversation_ID": event.detail.conversationId });
-		}
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
