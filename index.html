@@ -69,7 +69,7 @@
 					console.log('message_submitted');
 					// dataLayer.push({ event: "message_submitted", "conversation_ID": event.detail.conversationId });
 				} else {
-					if (event.detail.conversationEntry.entryPayload.includes('submitted your request, and a representative will follow up with you soon')) {
+					if (event.detail.conversationEntry.entryPayload.includes('representative will follow up with you soon')) {
 						console.log('chat_bot_net_lead');
 						// dataLayer.push({ event: "chat_bot_net_lead", "conversation_ID": event.detail.conversationId });
 					}
