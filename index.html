@@ -53,11 +53,14 @@
 		<img src="https://tankpas.nl/wp-content/themes/tankpas/images/logo.png" class="logo" alt="Travelcard logo">
     </main>                                                                                                                                                                                                                                                                                                                  
    
-    <script type='text/javascript'>
+    <script type='text/javascript'> 
 		window.dataLayer = window.dataLayer || [];
 		window.addEventListener("onEmbeddedMessagingWindowMinimized", (event) => {
 			console.log('chat_closed');
 			// dataLayer.push({ event: "chat_closed", "conversation_ID": event.detail.conversationId });
+		});
+		window.addEventListener("onEmbeddedMessagingConversationStarted", (event) => {
+			console.log('conversation_started event details === ', event.detail);
 		});
 		window.addEventListener("onEmbeddedMessagingWindowMaximized", (event) => {
 			console.log('chat_started');
