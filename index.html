@@ -56,28 +56,28 @@
 		window.dataLayer = window.dataLayer || [];
 		window.addEventListener("onEmbeddedMessagingWindowMinimized", (event) => {
 			console.log('chat_closed');
-			// dataLayer.push({ event: "chat_closed", "conversation_ID": event.detail.conversationId });
+			dataLayer.push({ event: "chat_closed", "conversationId": event.detail.conversationId });
 		});
 		window.addEventListener("onEmbeddedMessagingConversationStarted", (event) => {
 			console.log('conversation_started event details === ', event.detail);
 		});
 		window.addEventListener("onEmbeddedMessagingWindowMaximized", (event) => {
 			console.log('chat_started');
-			// dataLayer.push({ event: "chat_started", "conversation_ID": event.detail.conversationId });
+			dataLayer.push({ event: "chat_started", "conversationId": event.detail.conversationId });
 		});
 		window.addEventListener("onEmbeddedMessageSent", (event) => {
 			if (event.detail.conversationEntry.entryType == 'Message') {
 				if (event.detail.conversationEntry.senderDisplayName == 'Guest') {
 					console.log('message_submitted');
-					// dataLayer.push({ event: "message_submitted", "conversation_ID": event.detail.conversationId });
+					dataLayer.push({ event: "message_submitted", "conversationId": event.detail.conversationId });
 				} else {
 					if (event.detail.conversationEntry.entryPayload.includes('representative will follow up with you soon')) {
 						console.log('chat_bot_net_lead');
-						// dataLayer.push({ event: "chat_bot_net_lead", "conversation_ID": event.detail.conversationId });
+						dataLayer.push({ event: "chat_bot_net_lead", "conversationId": event.detail.conversationId });
 					}
 						
 					console.log('message_response');
-					// dataLayer.push({ event: "message_response", "conversation_ID": event.detail.conversationId });
+					dataLayer.push({ event: "message_response", "conversationId": event.detail.conversationId });
 				}
 				console.log("onEmbeddedMessageSent detail: ", event.detail);
 			}
