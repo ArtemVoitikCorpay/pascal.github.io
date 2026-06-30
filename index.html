@@ -47,6 +47,9 @@
 			--eswButtonBottom: 0px;
     		--eswButtonRight: 0px;
 		}
+		.embedded-messaging > .embeddedMessagingFrame {
+			z-index: 200000000;
+		}
     </style>
   </head>                                                                                                                                                                                                                                                                                                                    
   <body>                                                    
@@ -54,7 +57,6 @@
       <h1 style="color: grey;">SANDBOX<span class="dot"></span></h1>
 		<img style="width: 400px; height: 150px;" src="https://tankpas.nl/wp-content/themes/tankpas/images/logo.png" class="logo" alt="Travelcard logo">
     </main>
-  	<div id="agent-chat" style="height: 70vh; width: 100%;"></div>
    
     <script type='text/javascript'> 
 		window.dataLayer = window.dataLayer || [];
@@ -89,7 +91,6 @@
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-			embeddedservice_bootstrap.settings.targetElement = document.getElementById("agent-chat");
 
 			embeddedservice_bootstrap.init(
 				'00D9K00000Y0t91',
