@@ -8,8 +8,7 @@
       * { box-sizing: border-box; margin: 0; padding: 0; }                                                                                                                                                                                                                                                                   
                        
       body {
-        min-height: 100vh;
-        display: flex;                                                                                                                                                                                                                                                                                                       
+        min-height: 100vh;                                                                                                         
         align-items: center;
         justify-content: center;                                                                                                                                                                                                                                                                                             
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;                                                                                                   
@@ -52,7 +51,7 @@
 		<img style="width: 400px; height: 150px;" src="https://tankpas.nl/wp-content/themes/tankpas/images/logo.png" class="logo" alt="Travelcard logo">
     </main>
 
-	<div id="agentforce-chat" style="width:600px; height:800px;">
+	<div id="agentforce-chat">
 		
 	</div>
    
@@ -89,7 +88,6 @@
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-			embeddedservice_bootstrap.settings.displayMode = "inline";
 			embeddedservice_bootstrap.settings.targetElement = document.getElementById("agentforce-chat");
 
 			embeddedservice_bootstrap.init(
