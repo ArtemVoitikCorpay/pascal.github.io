@@ -50,7 +50,11 @@
     <main>
       <h1 style="color: grey;">SANDBOX<span class="dot"></span></h1>
 		<img style="width: 400px; height: 150px;" src="https://tankpas.nl/wp-content/themes/tankpas/images/logo.png" class="logo" alt="Travelcard logo">
-    </main>                                                                                                                                                                                                                                                                                                                  
+    </main>
+
+	<div id="agentforce-chat" style="width:600px; height:800px;">
+		
+	</div>
    
     <script type='text/javascript'> 
 		window.dataLayer = window.dataLayer || [];
@@ -85,6 +89,8 @@
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+			embeddedservice_bootstrap.settings.displayMode = "inline";
+			embeddedservice_bootstrap.settings.targetElement = document.getElementById("agentforce-chat");
 
 			embeddedservice_bootstrap.init(
 				'00D9K00000Y0t91',
