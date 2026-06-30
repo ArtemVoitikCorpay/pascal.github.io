@@ -70,7 +70,7 @@
 		window.addEventListener("onEmbeddedMessagingWindowMaximized", (event) => {
 			console.log('chat_started');
 			dataLayer.push({ event: "chat_started", "conversationId": event.detail.conversationId });
-		});
+		}); 
 		window.addEventListener("onEmbeddedMessageSent", (event) => {
 			if (event.detail.conversationEntry.entryType == 'Message') {
 				if (event.detail.conversationEntry.senderDisplayName == 'Guest') {
